@@ -30,10 +30,92 @@ export const ContainerLogo = styled.div`
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  img{
-    width: 130px;
+
+  @media (max-width:760px) {
+      h1{
+        font-size:18px;
+      }
+      h2{
+        font-size:17px;
+      
+      }
+    }
+`;
+
+export const ImageLogo =styled.img`
+
+    width: 120px;
     padding-right: 20px;
+
+    @media (max-width:760px) {
+      padding-right: 0;
+      width: 100px;
+    }
+  
+`;
+
+export const ContainerItems = styled.div`
+  display: flex;
+  align-items: center;
+
+  p{
+    cursor: pointer;
+    padding: 0 13px;
+    text-decoration: none;
+    color: ${colors.TEXT_BLACK};
+    font-weight: 500;
+
   }
+
+  @media (max-width:760px) {
+    display: ${(props)=>(props.showBurguerMenu? 'inline-grid':'none')}; // modify with props
+    position: absolute;
+    top: 100px;
+    background: ${colors.TEXT_WHITE};
+    box-shadow: ${colors.BOX_SHADOW};
+    padding: 10 px 0 20px 0;
+    width: 100%;
+    left: 0;
+
+    a{
+      padding: 10px 20px;
+    }
+
+  }
+`;  
+
+export const Button = styled.button`
+color: ${colors.TEXT_WHITE};
+box-shadow: ${colors.BOX_SHADOW_BUTTON};
+background: linear-gradient(220deg, #B22222 0%, #FFA07A 100%);
+padding: 12px 20px;
+border-radius: 999px;
+border:none;
+margin: 10px 0;
+font-size: 16px;
+font-weight:700;
+cursor: pointer;
+
+@media (max-width:760px) {
+  width: 50%;
+  margin: 5px 10px o 10px;
+}
+`;
+
+export const ContainerBurger = styled.div`
+display: none;
+
+ @media (max-width:760px) {
+  display: block;
+
+ }
+`;
+
+export const BurguerMenu = styled.div`
+width: 30px;
+height: 2px;
+background-color: ${colors.TEXT_BLACK};
+margin: 5px 0;
 `;
 
 
